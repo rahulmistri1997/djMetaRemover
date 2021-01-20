@@ -2,13 +2,28 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8"> 
-    <title>Hotel_image</title> 
+    <title>Hotel_image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .a{
+            align-content: center;
+            text-align: center;
+            margin: 25%;
+            /* margin: 50px; */
+        }
+
+        #btn{
+            margin-right: 80px;
+        }
+    </style>
 </head> 
 <body> 
-    <form method = "post" enctype="multipart/form-data"> 
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <button type="submit">Upload</button> 
-    </form> 
+    <div class="a">
+        <form method = "post" enctype="multipart/form-data"> 
+            {% csrf_token %} 
+            {{ form.as_p }} 
+            <button id='btn' type="submit">Upload</button> 
+        </form> 
+    </div>
 </body> 
 </html> 

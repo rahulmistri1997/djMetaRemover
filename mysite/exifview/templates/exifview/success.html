@@ -1,7 +1,60 @@
-{% extends "exifview/layout.html" %}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Hotel Images</title> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+      </script> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> 
+      </script>
 
-{% block body %}
-    <h1>Successfully Uploaded</h1>
-    <a href="{% url 'exifview:image_upload' %}">Upload More</a>
-    <a href="{% url 'exifview:hotel_images' %}">View Images</a>
-{% endblock %}
+      <style>
+        .col-md-4{
+            width:600px;
+            background-color: DarkSalmon;
+            padding:5px;
+            border:5px;
+            margin:5px;
+          }
+
+          /* Style buttons */
+        .btn {
+            margin-top: 5px;
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+            }
+
+            /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: RoyalBlue;
+            }
+
+        #more{
+            margin-top: 5px;
+            background-color: rgb(235, 66, 15);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+      </style>
+</head> 
+<body> 
+    <div class="col-md-4">
+        <h1>Successfully Uploaded</h1>
+        <img src="{{ hotel_images.hotel_Main_Img.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
+            
+        <a href="{{ hotel_images.hotel_Main_Img.url }}" download><button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button></a>
+        <br>
+        <a href="{% url 'exifview:image_upload' %}"><button class="btn" id="more" style="width:100%"><i class="fa fa-download"></i> Clean More Images</button></a>
+    </div> 
+</body> 
+</html> 
