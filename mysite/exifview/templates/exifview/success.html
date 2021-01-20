@@ -1,0 +1,7 @@
+{% extends "exifview/layout.html" %}
+
+{% block body %}
+    <h1>Successfully Uploaded</h1>
+    <a href="{% url 'exifview:image_upload' %}">Upload More</a>
+    <a href="{% url 'exifview:hotel_images' %}">View Images</a>
+{% endblock %}
