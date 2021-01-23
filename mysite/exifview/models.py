@@ -7,10 +7,10 @@ from PIL import Image
 
 class Hotel(models.Model): 
     name = models.CharField(max_length=50)
-    hotel_Main_Img = models.ImageField(upload_to='MetaClean/') #(upload_to='images/')
+    Image_To_Clean = models.ImageField(upload_to='MetaClean/') #(upload_to='images/')
     
     def save(self):
-        im = Image.open(self.hotel_Main_Img)
+        im = Image.open(self.Image_To_Clean)
 
         output = BytesIO()
         data = list(im.getdata())
@@ -20,6 +20,6 @@ class Hotel(models.Model):
         im.save(output, format='JPEG', quality=100)
         output.seek(0)
 
-        self.hotel_Main_Img = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.hotel_Main_Img.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
+        self.Image_To_Clean = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.Image_To_Clean.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 
         super(Hotel,self).save()

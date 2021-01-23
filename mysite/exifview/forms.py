@@ -1,13 +1,13 @@
 from django import forms
 from django.forms import widgets 
 from exifview.models import *
-  
-class HotelForm(forms.ModelForm): 
+
+class HotelForm(forms.ModelForm): # Images Upload Form TODO: Name Change
   
     class Meta: 
         model = Hotel 
-        fields = ['hotel_Main_Img'] 
+        fields = ['Image_To_Clean'] 
 
         widget = {
-            'hotel_Main_Img' : forms.FileInput(attrs={'class' : 'form-control'})
+            'Image_To_Clean' : forms.FileInput(attrs={'class' : 'form-control'})
         }

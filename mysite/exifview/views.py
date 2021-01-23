@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.core.files import File
 import os
 import time
-
+      
 from exifview.forms import *
 
 def hotel_image_view(request): 

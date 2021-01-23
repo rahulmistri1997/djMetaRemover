@@ -47,12 +47,12 @@
         }
       </style>
 </head> 
-<body> 
+<body>     
     <div class="col-md-4">
         <h1>Successfully Uploaded</h1>
-        <img src="{{ hotel_images.hotel_Main_Img.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
+        <img src="{{ hotel_images.Image_To_Clean.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" />
             
-        <a href="{{ hotel_images.hotel_Main_Img.url }}" download><button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button></a>
+        <a href="{{ hotel_images.Image_To_Clean.url }}" download><button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button></a>
         <br>
         <a href="{% url 'exifview:image_upload' %}"><button class="btn" id="more" style="width:100%"><i class="fa fa-download"></i> Clean More Images</button></a>
     </div> 
